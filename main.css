@@ -1,0 +1,157 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+header .logo img {
+    height: 50px; /* Adjust the height as needed */
+    width: auto;
+}
+
+.title-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    grid-column: 1 / -1;
+    background: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero .left-box {
+    background: #e4e4e4;
+    padding: 1rem;
+}
+
+.hero .right-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+}
+
+.hero .hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero .right-box {
+    background: #e4e4e4;
+    padding: 1rem;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+    background: #d4d4d4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    grid-column: 1 / -1;
+    background: #c4c4c4;
+    padding: 2rem;
+}
+
+.two-columns .box {
+    background: #b4b4b4;
+    padding: 1rem;
+    text-align: center;
+}
+
+.three-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    grid-column: 1 / -1;
+    background: #a4a4a4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.three-images .image-box {
+    background: #949494;
+    padding: 1rem;
+}
+
+.three-images .image-box img {
+    width: 100%;
+    height: auto;
+}
+
+.three-images .box {
+    background: #848484;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/*display for mobile resolution*/
