@@ -10,6 +10,25 @@ body {
     line-height: 1.6;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+     width: 100%;
+    max-width: 100vw; /* Or remove any max-width */
+    margin: 0 auto;
+    padding: 0;
+    overflow: visible;
+}
+
 header {
     background: #6B8F71;
     color: #fff;
@@ -66,16 +85,23 @@ main {
 }
 
 .hero-section {
-    width: 100%;
-    height: 800px;
-    background-image: url('fatherhomepage-01.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  position: relative;
+  width: 100vw;
+  /*height: 100vh;*/
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-section img {
-    display: none;
+#heroImage {
+  top: 0;
+  left: 0;
+  /* Remove object-fit because it crops or adds gaps */
+  width: 100%;  /* Start by filling width */
+  height: auto; /* Height adjusts to keep aspect ratio */
+  max-width: none;
+  max-height: none;
+  display: block;
 }
 
 .hero {
@@ -131,30 +157,75 @@ main {
     text-align: center;
 }
 
-.three-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.contact {
+    grid-column: 1 / -1; /* Spans all columns in the main grid */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    padding: 2rem 1rem;
+    background: #f9f9f9;
+}
+
+.contact-form {
+    max-width: 1000px;
+    width: 100%; /* Add this to fill available space within the parent */
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3 {
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
     gap: 1rem;
-    grid-column: 1 / -1;
-    background: #a4a4a4;
-    padding: 2rem;
-    text-align: center;
+    flex-wrap: wrap;
 }
 
-.three-images .image-box {
-    background: #949494;
-    padding: 1rem;
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.three-images .image-box img {
+.form-group.full {
+    margin-top: 1rem;
     width: 100%;
-    height: auto;
 }
 
-.three-images .box {
-    background: #848484;
-    padding: 1rem;
-    text-align: center;
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.form-actions button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background-color: #005fa3;
 }
 
 
@@ -166,5 +237,9 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
 }
+
+
 /*display for mobile resolution*/

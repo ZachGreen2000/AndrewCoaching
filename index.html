@@ -17,14 +17,11 @@
                 </div>
                 <!-- Title and Navigation section -->
                 <div class="title-nav">
-                    <h1>The Authentic Coach</h1> <!-- Website title -->
-                    <!-- Navigation menu -->
+                    <h1>The Authentic Leadership Coach</h1> <!-- Website title -->
+                    <!-- Navigation menu --> 
                     <nav>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -32,7 +29,7 @@
         </header>
         <!-- Banner of website -->
         <section class="hero-section">
-            <img src="fatherhomepage-01.png" alt="Home Page">
+            <img id="heroImage" src="fatherhomepage-01.png" alt="Home Page">
         </section>
         <!-- Main content section -->
         <main>
@@ -72,38 +69,58 @@
             </section>
             <!-- Full width section -->
             <section class="full-width">
-                <h2>Our Coaches</h2>
+                <h2>Contact</h2>
             </section>
-            <!-- Three images section -->
-            <section class="three-images">
-                <!-- Image 1 -->
-                <div class="image-box">
-                    <img src="https://via.placeholder.com/200" alt="Image 1">
-                    <div class="box">
-                        <p>Box below Image 1</p>
+            <!-- contact section -->
+            <section class="contact" id="contact">
+                <form class="contact-form" action="mailto:pat.zach.ev@gmail.com" method="POST" enctype="text/plain">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
                     </div>
-                </div>
-                <!-- Image 2 -->
-                <div class="image-box">
-                    <img src="https://via.placeholder.com/200" alt="Image 2">
-                    <div class="box">
-                        <p>Box below Image 2</p>
+
+                    <div class="form-group full">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                </div>
-                <!-- Image 3 -->
-                <div class="image-box">
-                    <img src="https://via.placeholder.com/200" alt="Image 3">
-                    <div class="box">
-                        <p>Box below Image 3</p>
+
+                    <div class="form-actions">
+                        <button type="submit">Send Message</button>
                     </div>
-                </div>
+                </form>
             </section>
         </main>
 
         <!-- Footer section -->
-        <footer>
+        <footer id="site-footer">
             <p>&copy; 2024 My Website. All rights reserved.</p>
         </footer>
     </div>
+    <script>
+        const footer = document.getElementById('site-footer');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const bodyHeight = document.body.offsetHeight;
+
+            // When you're at or near the bottom (within 50px)
+            if (scrollY + windowHeight >= bodyHeight - 50) {
+                footer.style.opacity = '0';
+                footer.style.pointerEvents = 'none';
+            } else {
+                footer.style.opacity = '1';
+                footer.style.pointerEvents = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
